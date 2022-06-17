@@ -275,7 +275,7 @@ class Core(commands.Cog):
     # Event listeners
     @commands.Cog.listener()
     async def on_guild_join(self, guild):
-        """Add prefix & entry in rotmg.guilds table on guild join"""
+        """Add prefix & entry in guilds table on guild join"""
         with open('data/prefixes.json', 'r') as file:
             prefixes = json.load(file)
         prefixes.update({guild.id: '!'})

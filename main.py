@@ -372,7 +372,7 @@ async def syncm(ctx):
 
     async with bot.pool.acquire() as conn:
         async with conn.cursor() as cursor:
-            s = f"Replace INTO rotmg.users (id, ign, status, verifiedguilds, alt1, alt2) VALUES (%s, %s, %s, %s, %s, %s)"
+            s = f"Replace INTO users (id, ign, status, verifiedguilds, alt1, alt2) VALUES (%s, %s, %s, %s, %s, %s)"
             await cursor.executemany(s, m_names)
             await conn.commit()
 
